@@ -1,17 +1,12 @@
 import numpy as np
 from player_name import player_name as pn
-
-def greeting():
-    print("==============================")
-    print("Welcome to the game!")
-    print("==============================\n")
+from print_statements import greeting
 
 def main():
-    greeting()
-
+    greeting.welcome()
     name = pn.namePlayer()
 
-    print("Alright! Let's get this started.\n\n")
+    print("Alright", name + "!", "Let's get this started.\n\n")
 
 
     return 0
