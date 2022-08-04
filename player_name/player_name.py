@@ -1,10 +1,16 @@
 import numpy as np
 from print_statements import name_prints as p
 
+def stillNotY(yon):
+    return not(yon == "y" or yon == "Y")
+
+def validateInput(yon):
+    return not(yon == "Y" or yon == "y" or yon == "N" or yon == "n")
+
 def namePlayer():
     yon = ""
-
-    notY = not(np.logical_xor(yon != "y", yon != "Y"))
+    notY = stillNotY(yon)
+    
     while(notY):
         p.askName()
         name = input()
@@ -12,14 +18,14 @@ def namePlayer():
         p.confirmName(name)
         yon = input()
 
-        stillInvalid = not(yon == "Y" 
-                           or yon == "y" 
-                           or yon == "N" 
-                           or yon == "n")
+        stillInvalid = validateInput(yon)
+
         while(stillInvalid):
             p.invalidInput()
             yon = input()
+            stillInvalid = validateInput(yon)
 
         if(yon == "n" or yon == "N"):
             p.eneteredN()
+        notY = stillNotY(yon)
     return name
