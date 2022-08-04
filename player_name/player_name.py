@@ -1,23 +1,25 @@
 import numpy as np
+from print_statements import name_prints as p
 
 def namePlayer():
     yon = ""
 
-    while(not(np.logical_xor(yon != "y", yon != "Y"))):
-        print("What is your name: ", end='')
+    notY = not(np.logical_xor(yon != "y", yon != "Y"))
+    while(notY):
+        p.askName()
         name = input()
 
-        print("Your name is", name, "is that correct?")
-        print("(Y/N): ", end='')
+        p.confirmName(name)
         yon = input()
 
-        notN = np.logical_xor(yon != "n", yon != "N")
-        notY = np.logical_xor(yon != "y", yon != "Y")
-        notYoN = notN and notY
-
-        while(notYoN):
-            print("(Y/N)?: ", end='')
+        stillInvalid = not(yon == "Y" 
+                           or yon == "y" 
+                           or yon == "N" 
+                           or yon == "n")
+        while(stillInvalid):
+            p.invalidInput()
             yon = input()
+
         if(yon == "n" or yon == "N"):
-            print("\nOkay! Let's change it.\n")
+            p.eneteredN()
     return name
