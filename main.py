@@ -1,7 +1,7 @@
 import numpy as np
 from player_name import player_name as pn
 from print_statements import greeting, introduction
-from command_interpreter import command
+from command_interpreter import homeCommand
 
 def main():
     greeting.welcome()
@@ -12,9 +12,9 @@ def main():
     gameIsActive = True
 
     while(gameIsActive):
-        cmd = command.readCommand()
-        parseCMD = command.parseCommand(cmd)
-        returnCode = command.executeCommand(parseCMD)
+        cmd = homeCommand.readCommand()
+        parseCMD = homeCommand.parseCommand(cmd)
+        returnCode = homeCommand.executeCommand(parseCMD)
         
         gameIsActive = returnCode
 

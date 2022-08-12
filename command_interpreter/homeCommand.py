@@ -17,8 +17,8 @@ def executeCommand(cmd):
             case "battle":
                 print("let's battle!!!")
                 return 1
+            case "help":
+                return 1
             case _:
                 print("i don't know that command!")
                 return 2
-
-
