@@ -7,23 +7,33 @@ def stillNotY(yon):
 def validateInput(yon):
     return not(yon == "Y" or yon == "y" or yon == "N" or yon == "n")
 
+def getName():
+    p.askName()
+    name = input()
+    return name
+
+def getYoN(name):
+    p.confirmName(name)
+    yon = input()
+    return yon
+
+def checkValidity():
+    p.invalidInput()
+    yon = input()
+    stillInvalid = validateInput(yon)
+    return stillInvalid
+
 def namePlayer():
     yon = ""
     notY = stillNotY(yon)
     
     while(notY):
-        p.askName()
-        name = input()
-
-        p.confirmName(name)
-        yon = input()
-
+        name = getName()
+        yon = getYoN(name)
         stillInvalid = validateInput(yon)
 
         while(stillInvalid):
-            p.invalidInput()
-            yon = input()
-            stillInvalid = validateInput(yon)
+            stillInvalid = checkValidity()
 
         if(yon == "n" or yon == "N"):
             p.eneteredN()
