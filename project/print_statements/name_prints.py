@@ -1,13 +1,12 @@
 def askName():
-    print("What is your name: ", end='')
+    return "What is your name: "
 
 def confirmName(name):
-    print("Your name is", name, "is that correct?")
-    print("(Y/N): ", end='')
+    return ["Your name is " + name + ", is that correct?", "(Y/N): "]
 
 
 def invalidInput():
-    print("(Y/N)?: ", end='')
+    return "(Y/N)?: "
 
 def eneteredN():
-    print("\nOkay! Let's change it.\n")
+    return "\nOkay! Let's change it.\n"
