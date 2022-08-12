@@ -1,7 +1,7 @@
 import numpy as np
-from player_name import player_name as pn
-from print_statements import greeting, introduction
-from command_interpreter import homeCommand
+from project.player_name import player_name as pn
+from project.print_statements import greeting, introduction
+from project.command_interpreter import homeCommand
 
 def main():
     greeting.welcome()
